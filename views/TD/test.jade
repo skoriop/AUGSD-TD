@@ -28,11 +28,17 @@ block content
 		.mdl-textfield--file .mdl-button--file {
 		right: 0;
 		}
+		.success {
+			background: #61d168 !important;
+			color: #ffffff !important;
+			padding: 1px !important; 
+			
+		}
 	
 	div.mdl-cell.mdl-cell--12-col
 		h2 Room Map Upload
 		center
-			form(action="./holidays/add", method="post", id="form1").mdc-form-field
+			form(action="./test" method="post" enctype="multipart/form-data" id="form1").mdc-form-field
 				.mdl-textfield.mdl-js-textfield.mdl-textfield--file
 					input#fileitem2.mdl-textfield__input(placeholder='No file chosen (Room Map)', type='text', readonly='')
 					.mdl-button.mdl-button--icon.mdl-button--file
@@ -51,3 +57,8 @@ block content
 						| Add
 						span.mdl-button__ripple-container
 							span.mdl-ripple
+				br
+			br
+			if status === "success"
+				.success
+					h5 Success!
